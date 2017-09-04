@@ -2,7 +2,7 @@ organization := "com.updateimpact"
 
 name := "updateimpact-sbt-plugin"
 
-version := "2.1.2"
+version := "2.1.2.1"
 
 sbtPlugin := true
 
@@ -47,7 +47,7 @@ buildInfoObject := "UpdateimpactSbtBuildInfo"
 
 // Testing
 
-ScriptedPlugin.scriptedSettings
+ScriptedPlugin.projectSettings
 
 scriptedLaunchOpts := {
     scriptedLaunchOpts.value ++
@@ -56,4 +56,4 @@ scriptedLaunchOpts := {
 
 scriptedBufferLog := false
 
-scriptedRun <<= scriptedRun dependsOn publishLocal
+scriptedRun := (scriptedRun dependsOn publishLocal).value

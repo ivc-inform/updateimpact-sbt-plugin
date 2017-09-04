@@ -19,26 +19,6 @@ credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 
 publishMavenStyle := true
 
-pomIncludeRepository := { _ => false }
-
-pomExtra := (
-  <scm>
-      <url>git@gihub.com/updateimpact/updateimpact-sbt-plugin.git</url>
-      <connection>scm:git:git@github.com/updateimpact/updateimpact-sbt-plugin.git</connection>
-  </scm>
-    <developers>
-        <developer>
-            <id>adamw</id>
-            <name>Adam Warski</name>
-            <url>http://www.warski.org</url>
-        </developer>
-    </developers>
-  )
-
-licenses := ("Apache2", new java.net.URL("http://www.apache.org/licenses/LICENSE-2.0.txt")) :: Nil
-
-homepage := Some(new java.net.URL("http://updateimpact.com"))
-
 enablePlugins(BuildInfoPlugin)
 
 buildInfoPackage := "com.updateimpact"
